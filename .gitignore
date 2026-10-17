@@ -1,1 +1,21 @@
 __pycache__/
+*.pyc
+.venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+# ffmpeg downloaded by the setup scripts
+bin/
+# audio
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.ogg
+*.opus
+*.aiff
+!tests/fixtures/**
+.venv.broken.*/

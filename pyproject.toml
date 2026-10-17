@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "audio-tools"
+version = "1.0.0"
+description = "Loudness-normalize (ITU-R BS.1770 / LUFS) and convert audio files with ffmpeg and numpy."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+fast = ["scipy>=1.10"]
+dev = ["pytest>=8", "pytest-cov>=5"]
+
+[project.scripts]
+audio-tools = "audio_tools.cli:main"
+
+[tool.setuptools]
+packages = ["audio_tools"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = ["unit: fast tests with no external tools", "integration: tests that call ffmpeg"]
